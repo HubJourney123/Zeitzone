@@ -14,8 +14,12 @@ function Layout({ children }) {
   return (
     <div className="min-h-screen">
       {!isAdmin && <Navbar />}
-      <main className={!isAdmin ? 'pt-14 pb-20' : ''}>
-        {children}
+      <main className={!isAdmin ? 'pt-14 pb-20 lg:pb-0' : ''}>
+        {!isAdmin ? (
+          <div className="max-w-6xl mx-auto">
+            {children}
+          </div>
+        ) : children}
       </main>
       {!isAdmin && <BottomNav />}
       {!isAdmin && <CartDrawer />}

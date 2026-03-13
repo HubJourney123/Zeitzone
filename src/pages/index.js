@@ -27,7 +27,7 @@ export default function Home({ products, carouselSlides }) {
 
       {/* Brand tagline */}
       <div className="text-center py-5 px-4">
-        <p className={`font-serif text-2xl font-bold tracking-widest ${isDark ? 'text-white' : 'text-gray-900'}`}>
+        <p className={`font-serif text-2xl lg:text-4xl font-bold tracking-widest ${isDark ? 'text-white' : 'text-gray-900'}`}>
           ZEIT<span className="text-emerald-500">ZONE</span>
         </p>
         <p className={`text-xs mt-1 tracking-widest uppercase ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>
@@ -37,7 +37,7 @@ export default function Home({ products, carouselSlides }) {
 
       {/* Category Tabs */}
       <div className="px-4 mb-4">
-        <div className={`flex gap-2 overflow-x-auto pb-1 scrollbar-hide`}>
+        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide lg:justify-center">
           {CATS.map(cat => (
             <button
               key={cat.id}
@@ -67,7 +67,7 @@ export default function Home({ products, carouselSlides }) {
             <p className={`text-sm ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>No watches in this category yet</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
             {filtered.map(p => <WatchCard key={p.id} product={p} />)}
           </div>
         )}

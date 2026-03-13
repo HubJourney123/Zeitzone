@@ -75,7 +75,7 @@ export default function CategoryPage({ products, category, subcategory }) {
             <p className={`text-sm ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>No watches here yet</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
             {products.map(p => <WatchCard key={p.id} product={p} />)}
           </div>
         )}
